@@ -6,7 +6,17 @@
     */
 
     //ENTRADA
-
+    let numero = Number(prompt(`insira um número de 0 a 10`));
+    while(numero > 0 || numero < 10 && isNaN(numero)){
+        if (numero > 10 || numero < 0 ){
+            alert(`valor invalido. Digite novamente`);
+        }
+        else {
+            alert(`valor válido`);
+        }
+    break;
+    }
+   
 
     //PROCESSAMENTO
 

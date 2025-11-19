@@ -11,14 +11,20 @@
     */
 
     //ENTRADA
-    let nome = prompt(`qual o nome`); 
-    while (nome <= 3) {
+    let nome = prompt(`qual o nome`).trim().charAt(0).toLowerCase(); 
+    while (nome < 3) {
         alert(`Nome inválido, digite novamente`)
     }
-    let idade = Number(prompt(`digite a idade`));
-    while()
-    let salario = Number(prompt(`qual o salario`));
+    let idade = Number(prompt(`digite a idade`)).trim().charAt(0).toLowerCase();
+    while(idade < 0 && idade > 150) {
+        alert(`Idade Inválida, digite novamente`)
+    }
+    let salario = Number(prompt(`qual o salario`)).trim().charAt(0).toLowerCase();
+    while(salario <= 0) {
+        alert(`sálario inválido, tem de ser maior que zero`)
+    }
     let sexo = prompt(`M - masculino ; F - feminino ; T - todo dia`).charAt(0).toLowerCase().trim();
+    while()
     let estadoCivil = prompt(`S - solteiro(a) ; C - casado(a) ; V - Viuvo(a) ; D - divorcido(a)`).trim().charAt(0).toLowerCase();
     
 

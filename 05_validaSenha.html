@@ -6,7 +6,15 @@
     */
 
     //ENTRADA
+    const senhaCorreta = "1234";   
+    let senha = prompt("Digite a senha (4 números):");
 
+    while (senha !== senhaCorreta) {
+        alert("Senha Incorreta");
+        senha = prompt("Digite a senha novamente:");
+    }
+
+    alert("Senha Correta");
 
     //PROCESSAMENTO
 

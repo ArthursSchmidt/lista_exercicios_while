@@ -18,13 +18,74 @@
     c) A porcentagem de votos brancos;
     d) O candidato vencedor.
     */
+    let candidato1 = prompt("Digite o nome do primeiro candidato:");
+    let candidato2 = prompt("Digite o nome do segundo candidato:");
 
-    //ENTRADA
+    let votos1 = 0;
+    let votos2 = 0;
+    let votosNulo = 0;
+    let votosBranco = 0;
+    let totalVotos = 0;
+
+    let voto;
+
+    do {
+        voto = Number(prompt(
+            "As opções são:\n" +
+            `1 - ${candidato1}\n` +
+            `2 - ${candidato2}\n` +
+            "3 - Nulo\n" +
+            "4 - Branco\n" +
+            "0 - Encerrar votação\n\n" +
+            "Entre com o seu voto:"
+        ));
+
+        switch (voto) {
+            case 1:
+                votos1++;
+                totalVotos++;
+                break;
+            case 2:
+                votos2++;
+                totalVotos++;
+                break;
+            case 3:
+                votosNulo++;
+                totalVotos++;
+                break;
+            case 4:
+                votosBranco++;
+                totalVotos++;
+                break;
+            case 0:
+                
+                break;
+            default:
+                alert("Opção inválida! Tente novamente.");
+        }
+
+    } while (voto !== 0);
+
+    let percNulo = (votosNulo / totalVotos) * 100;
+    let percBranco = (votosBranco / totalVotos) * 100;
+
+    
+    let vencedor;
+    if (votos1 > votos2) {
+        vencedor = candidato1;
+    } else if (votos2 > votos1) {
+        vencedor = candidato2;
+    } else {
+        vencedor = "Empate";
+    }
 
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
-
+    alert(
+        "Resultado da eleição:\n\n" +
+        `${candidato1}: ${votos1} votos\n` +
+        `${candidato2}: ${votos2} votos\n` +
+        `Nulos: ${votosNulo} votos (${percNulo.toFixed(2)}%)\n` +
+        `Brancos: ${votosBranco} votos (${percBranco.toFixed(2)}%)\n\n` +
+        "Vencedor: " + vencedor
+    );
 </script>

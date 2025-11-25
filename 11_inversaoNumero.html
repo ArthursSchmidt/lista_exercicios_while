@@ -7,12 +7,24 @@
     Saída: 54321
     */
 
-    //ENTRADA
+    // ENTRADA
+    let numero = prompt("Digite um número para inverter:");
 
+    while (isNaN(numero) || numero.trim() === "") {
+        numero = prompt("Valor inválido! Digite apenas números:");
+    }
 
-    //PROCESSAMENTO
+    // PROCESSAMENTO
+    let invertido = "";
+    let i = numero.length - 1;
 
+    while (i >= 0) {
+        invertido += numero[i];
+        i--;
+    }
 
-    //SAÍDA
+    // SAÍDA
+    alert("Número invertido: " + invertido);
+</script>
 
 </script>

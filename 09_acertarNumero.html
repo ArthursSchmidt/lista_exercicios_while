@@ -3,13 +3,24 @@
     /*
     O computador escolhe um número aleatório de 1 a 30, e o usuário precisa adivinhar. O programa dá dicas ("maior" ou "menor") até acertar.
     */
-
-    //ENTRADA
-
-
-    //PROCESSAMENTO
-
-
-    //SAÍDA
+   // ENTRADA
+const numeroSecreto = Math.floor(Math.random() * 30) + 1;
     
+    //PROCESSAMENTO
+    let palpite = Number(prompt("Adivinhe o número (entre 1 e 30):"));
+    
+    while (palpite !== numeroSecreto) {
+
+        if (palpite > numeroSecreto) {
+            palpite = Number(prompt("Menor! Tente novamente:"));
+        } else if (palpite < numeroSecreto) {
+            palpite = Number(prompt("Maior! Tente novamente:"));
+        } else {
+            alert("Digite um valor válido!");
+            palpite = Number(prompt("Tente novamente:"));
+        }
+    }
+
+    // SAIDA
+    alert("🎉 Parabéns! Você acertou o número: " + numeroSecreto);
 </script>
